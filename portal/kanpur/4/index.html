@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>E-Repair</title>
+	<style>
+
+		body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  position: relative;
+		  overflow: hidden;
+		  background-color: #F96646;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.topnav a.active {
+		  color: white;
+		}
+
+		.topnav-right {
+		  float: right;
+			padding-top: 30px;
+			padding-right: 40px;
+		}
+
+		.footer {
+		   position: fixed;
+		   bottom: 0;
+		   width: 100%;
+		   background-color: #333;
+		   color: white;
+		   padding: 10px;
+		}
+
+		#card-parent {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.shop-cards {
+	      margin: auto;
+	      width: 60%;
+	      border: 3px solid #73AD21;
+	      padding: 2rem;
+	      margin-top:1rem;
+	    }
+
+		.shop-child {
+			border: thin solid blue;
+			padding: 1rem;
+			margin: 1rem;
+			width: 500px;
+		}
+
+		.review-cards {
+	      margin: auto;
+	      width:80%;
+	      border: 3px solid #73AD21;
+	      padding: 1rem;
+	      margin-top:1rem;
+	    }
+
+		#review-parent {
+			display: flex;
+			flex-direction: row;
+			padding-left: 1rem;
+		}
+
+		.bookingForm {
+			margin-left: 50px;
+		}
+
+		.bookingForm input, select, textarea {
+			margin-left: 20px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		button.submit {
+			margin-left: 40%;
+		}
+
+		button.submit a:link, a:hover, a:active, a:visited {
+			text-decoration: none;
+			color: black;
+		}
+
+		#problem {
+			height:60px;
+			width: 300px;
+			line-height: 20px;
+		}
+
+		/* Responsive navigation menu (for mobile devices) */
+		@media screen and (max-width: 600px) {
+
+			.topnav a {
+				font-size: 15px;
+				padding: 5px;
+				margin-top: 5px;
+			}
+		  
+			.topnav a, .topnav-left {
+			    float: left;
+			    display: grid;
+			 }	
+
+			.topnav a, .topnav-right {
+			    float: right;
+			    display: grid;
+			}
+
+		 	.topnav-left {
+			  float: left;
+			  padding: 5px;
+			}
+
+			.topnav-right {
+			  float: right;
+				padding: 10px;
+			}
+
+			#card-parent {
+				flex-direction: column;
+			}
+
+			.shop-child {
+				width: 90%;
+				margin: 0rem;
+				margin-bottom: 1rem;
+			}
+
+			.shop-cards {
+				width: 80%;
+				padding: 1rem;
+				margin-bottom: 50px;
+			}
+
+			#problem {
+				height:80px;
+				width: 70%;
+				line-height: 15px;
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="topnav">
+
+	  <div class="topnav-left">
+	  	<a href="./../../index.html"><img src="./../../cdn/logo.png" height="100px" width="auto" style="border: thin solid green; border-radius: 10%;"></a>
+	  </div>
+
+	  <div class="topnav-right">
+	    <a href="./../../service.html" style="border: thin solid white;">Services</a>
+	    <a href="./../../about.html" style="border: thin solid white;">About Us</a>
+			<a href="./../../contact.html" style="border: thin solid white;">Contact Us</a>
+	  </div>
+
+	</div>
+
+	<div class="shop-cards">
+    <div id="card-parent">
+
+    	<div class="shop-child">
+				<p>
+					<img src="1.jfif" height="200px" width="200px" alt="Shop Front">
+					<img src="2.jfif" height="200px" width="200px" alt="Shop Inside">
+				</p>
+				<p>
+					Overall Rating: 3.0<br><br>
+					<h4 id="shopName">R.K. Electric Works</h4><br>
+					Shop Address: Shop No.117/N/309, Kakadav Road, Chapeda Bazar, Tulsi Nagar, Rajivpuram, Kakadeo, Kanpur, Uttar Pradesh 208025<br>
+					Owner Name:<br>
+					Contact Number: 09839141069<br><br>
+					Navigate (Google Map): <a href="https://goo.gl/maps/pHHfEKEhZ4jXXmh46">Click here</a><br>
+				</p>
+			</div>
+
+    	<div class="shop-child">
+			<h2 style="text-align:center;">Book an Appointment through InMail</h2><br>
+
+			<div>
+				<form class="bookingForm">
+				  <label for="name">Name:</label><br>
+				  <input type="text" id="name" name="name" placeholder="Enter your Name" required><br>
+				  <label for="phone">Phone Number:</label><br>
+				  <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required><br>
+				  <label for="email">E-mail:</label><br>
+				  <input type="text" id="email" name="email" placeholder="Enter your Email Address" required><br>
+				  <label for="type">Device type:</label><br>
+				  <select id="type" name="type" required>
+				  	<option value="" selected disabled>Select</option>
+				  	<option value="smartphone">Smartphone</option>
+				  	<option value="keypad">Keypad phone</option>
+				  	<option value="laptop">Laptop</option>
+				  	<option value="desktop">Desktop</option>
+				  	<option value="tv">TV</option>
+				  </select>
+				  <br>
+				  <label for="model">Device Model:</label><br>
+				  <input type="text" id="model" name="model" placeholder="Enter Model of Device"><br>
+				  <label for="problem">Problem you are facing:</label><br>
+				  <textarea type="text" id="problem" name="problem" placeholder="State your problem you are facing"></textarea>
+				  <br>
+				  <button class="submit"><a href="" id="appointment_mail" onclick="appointment_Mail()">Submit</a></button>
+				</form>
+			</div>
+
+		</div>
+
+    </div>
+  </div>
+
+	<div class="footer">
+		<div style="width: 100%; text-align: center;">2022 &#169; E-Repair </div>
+	</div>
+
+<script type="text/javascript">
+
+	function appointment_Mail() {
+		var name = document.getElementById("name");
+		var phone = document.getElementById("phone");
+		var email = document.getElementById("email");
+		var type = document.getElementById("type");
+		var model = document.getElementById("model");
+		var problem = document.getElementById("problem");
+		var shopName = document.getElementById("shopName");
+
+		var mail = "Name:%20" + name.value 
+					+ "%0A" + 
+					"Phone Number:%20" + phone.value 
+					+ "%0A" + 
+					"Email:%20" + email.value 
+					+ "%0A" + "%0A" + 
+					"Device%20Type:%20" + type.value 
+					+ "%0A" + 
+					"Device%20Model:%20" + model.value 
+					+ "%0A" + "%0A" + 
+					"Problem:%20" + problem.value 
+					+ "%0A" + "%0A" + 
+					"Shop%20Name:%20" + shopName.innerHTML;
+
+		document.getElementById("appointment_mail").href = 'mailto:appointment.erepair@gmail.com?subject=Appointment&body=' + mail;
+	}
+
+</script>
+
+</body>
+</html>
